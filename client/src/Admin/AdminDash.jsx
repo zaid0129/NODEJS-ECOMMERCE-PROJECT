@@ -1,7 +1,7 @@
 let AdminDash=()=>{
     return(
         <>
-        
+        <h1>DASHBOARD PAGE </h1>
         
         </>
     )
