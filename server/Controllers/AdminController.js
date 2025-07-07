@@ -52,13 +52,13 @@ const saveProduct = async (req, res)=> {
     }
     try {
       const imageURL = req.files.map((file)=> file.path);
-      console.log(imageURL)
+      // console.log(imageURL)
       const {name, description, price, category} = req.body;
-      console.log(req.body)
+      // console.log(req.body)
 
       const Product = new ProductModel ({
         name: name,
-        description: name,
+        description: description,
         price: price,
         category: category,
         images:imageURL,

@@ -1,7 +1,13 @@
 import  { useState } from 'react'
 import BackEndUrl from '../utils/BackEndUrl';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../css/AddProducts.css'
+
+
+
+// -----------------------------------------------------------//
 const AddProducts = () => {
     
     const[inp,setInp]=useState({})
@@ -40,13 +46,31 @@ const AddProducts = () => {
           
          }
 
-         await axios.post(api,formData).then((res)=>{
+        //  await axios.post(api,formData).then((res)=>{
             
-            console.log(res.data)
-         })
-         console.log(formData)
-      }    
+        //     console.log(res.data)
+        //  })
+        //  console.log(formData)
 
+  
+
+       try {
+      const res = await axios.post(api, formData);
+      console.log(res.data);
+      toast.success('Product added successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error('Failed to add product.', {
+        position: 'top-right',
+        autoClose: 3000,
+      });
+    }
+
+ }    
+ 
   return (
     <>
         <div className="add-product-container">
@@ -95,10 +119,10 @@ const AddProducts = () => {
               required
             >
               <option value="">Choose Category</option>
-              <option value="eyes">Male</option>
-              <option value="face">Female</option>
-              <option value="skin">Unisex</option>
-              <option value="lips">Kids</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="unisex">Unisex</option>
+              <option value="kids">Kids</option>
             </select>
           </li>
 
@@ -117,6 +141,7 @@ const AddProducts = () => {
         <button type="submit">Add Product</button>
       </form>
     </div>
+       <ToastContainer />
     </>
   );
 }

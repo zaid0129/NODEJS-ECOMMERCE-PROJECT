@@ -44,7 +44,6 @@ const response = await axios.post(api, { adminId:adminId, password:password });
 
   }
 
-
     return(
         <>
         <div className="admin-login-page">
