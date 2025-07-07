@@ -1,9 +1,9 @@
-/* === Base Navbar Styling === */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f4f1ea;  /* Matches background in the image */
+  background-color: #f4f1ea;  
   padding: 12px 30px;
   font-family: 'Georgia', serif;
   border: 1px solid #e0ddd6;
@@ -20,7 +20,7 @@ ul {
 
 li a {
   text-decoration: none;
-  color: #4b4b4b;  /* Font color from image */
+  color: #4b4b4b;  
   font-size: 16px;
   transition: color 0.2s ease;
 }
@@ -45,7 +45,7 @@ li a:hover {
   gap: 5px;
 }
 
-/* === Responsive Styling === */
+
 @media (max-width: 1024px) {
   .navbar {
     flex-direction: column;

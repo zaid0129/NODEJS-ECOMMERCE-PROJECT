@@ -13,7 +13,8 @@ mongoose.connect(process.env.DBCON).then(()=>{
 })
 app.use (cors())
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.json());
 
 app.use('/admin', AdminRoute)
 app.listen(Port, ()=>{

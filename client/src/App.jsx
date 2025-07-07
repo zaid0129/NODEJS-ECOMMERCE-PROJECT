@@ -2,6 +2,9 @@ import { Route, Routes } from "react-router-dom"
 import Layout from "./Layout"
 import AdminLogin from "./Admin/AdminLogin"
 import AdminDash from "./Admin/AdminDash"
+import FrontPage from "./pages/FrontPage"
+import AddProduct from "./Admin/AddProducts"
+
   
 function App() {
 
@@ -9,12 +12,15 @@ function App() {
     <>
     <Routes>
           <Route path="/" element={<Layout />}>
-          </Route>
-        </Routes>
+          <Route index element={<FrontPage />}/>
 
-         <Routes>
+          </Route>
+      
           <Route path="adminlogin" element={<AdminLogin />} />
-          <Route path="admindash" element={<AdminDash />} >
+
+      
+          <Route path="/admindash" element={<AdminDash />} >
+         <Route  path='addproduct' element={<AddProduct/>} />
           </Route>
         </Routes>
 

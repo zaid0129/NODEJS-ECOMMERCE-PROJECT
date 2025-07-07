@@ -1,0 +1,115 @@
+/* ===== Admin Dashboard Layout ===== */
+
+.admin-main {
+  background-color: #f5f0e8;
+  min-height: 100vh;
+  font-family: 'Georgia', serif;
+  color: #3d3b2f;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-topbar {
+  background-color: #3d3b2f;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.admin-topbar h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.admin-topbar h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.logout-btn {
+  background-color: #fff;
+  color: #3d3b2f;
+  font-family: 'Georgia', serif;
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #f5f0e8;
+  color: #3d3b2f;
+}
+
+.admin-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.admin-sidebar {
+  background-color: #fff;
+  padding: 30px 20px;
+  min-width: 200px;
+  border-right: 1px solid #ddd; /* <--- this creates the line */
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;  /* make it vertical */
+  gap: 20px;               /* vertical spacing between items */
+}
+
+.admin-sidebar li {
+  margin: 0;                
+}
+
+.admin-sidebar li a {
+  color: #3d3b2f;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.admin-sidebar li a:hover {
+  background-color: #f5f0e8;
+}
+
+.admin-outlet {
+  flex: 1;
+  padding: 40px;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  .admin-content {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+  }
+
+  .admin-sidebar ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .admin-sidebar li {
+    margin-bottom: 0;
+  }
+}
