@@ -5,7 +5,7 @@ const cloudinary= require('../cloudinary');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 // -----------------------------------------------------------------------------//
 
-// MULTER STORAGE SETUP
+// -----------------------------MULTER STORAGE SETUP-----------------------------------//
 
 const storage = new CloudinaryStorage({
   cloudinary : cloudinary,
@@ -19,7 +19,7 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage : storage}).array('images', 10);
 
 
-// Admin Login SetUp
+// -------------------------Admin Login SetUp-------------------------------//
 
 const AdminLogin = async(req, res)=>{
 
@@ -41,7 +41,26 @@ const AdminLogin = async(req, res)=>{
 
 
 
-// Upload Product Images
+ //----------------------------JWT Authentication-------------------------------------//
+
+ const Auth = async (req, res)=>{
+  const token = req.header("x-token");
+  console.log(token);
+
+  if (!token) return res.json(false);
+
+  const verify = await jwt.verify(token, process.env.JWT);
+  if (!verify) return res.json(false);
+  console.log(verify);
+
+  const user = await adminModel.findById(verify.id).select("password");
+  res.send(user);
+
+}
+
+
+
+// -------------------------------Upload Product Images---------------------------------//
 
 const saveProduct = async (req, res)=> {
   upload(req, res, async(err)=>{
@@ -79,4 +98,5 @@ const saveProduct = async (req, res)=> {
 module.exports = {
   AdminLogin,
   saveProduct,
+  Auth
 };
