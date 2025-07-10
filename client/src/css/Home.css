@@ -1,0 +1,132 @@
+/* Container: horizontal scroll row */
+.card-container {
+  display: flex;
+  flex-wrap: nowrap; /* key: prevent wrapping */
+  overflow-x: auto;  /* horizontal scroll if overflow */
+  gap: 20px;
+  padding: 40px 20px;
+  scroll-behavior: smooth;
+}
+
+/* Card: fixed width for horizontal row */
+.custom-card {
+  flex: 0 0 250px; /* fixed width for all cards */
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Product image */
+.custom-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Product title */
+.custom-card .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Product price */
+.custom-card .card-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Add to cart button */
+.custom-card .btn-primary {
+  background: #333;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.custom-card .btn-primary:hover {
+  background: #555;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 2px;
+  margin: 40px 0 20px;
+}
+
+/* Hide scrollbar for Webkit (optional) */
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 4px;
+}
+.card-container::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+/* Hide scrollbar for Firefox */
+.card-container {
+    scrollbar-width: thin;
+    scrollbar-color: #999 transparent;
+    }
+.card-container:hover {
+    scrollbar-color: #777 transparent;
+    }
+/* Hide scrollbar for IE and Edge */
+
+.card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.card-container::-ms-scrollbar {
+  display: none; /* IE and Edge */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 20px;
+    }
+    
+    .custom-card {
+        flex: 0 0 200px; /* smaller width for mobile */
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin: 20px 0;
+    }
+    }
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .card-container {
+        padding: 10px;
+    }
+    
+    .custom-card {
+        flex: 0 0 150px; /* even smaller width for very small screens */
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+}

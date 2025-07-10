@@ -13,6 +13,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/cartSlice";
+import "../css/Home.css"; 
 
 const Home = () => {
 
@@ -41,7 +42,7 @@ const Home = () => {
       return (
         <>
 
-        <h1>ADMIN CARTS</h1>
+        
           <div className="card-container">
             <Card 
               style={{ width: "18rem", alignItems: "center", display:"flex", flexDirection:"column"}}

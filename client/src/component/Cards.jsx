@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import img1 from "../images/img1.jpg"
+import img1 from "../images/img1.jpg.jpg"
 import img2 from "../images/img2.jpg"
 import img3 from "../images/img3.jpg"
+import new1 from "../images/new1.jpg"
 import img4 from "../images/img4.jpg.avif"
 import img5 from "../images/img5.jpg"
 import img6 from "../images/img6.jpg"
@@ -17,21 +18,21 @@ let Cards=()=>{
       <div className="card-sec1">
         <div className="card">
           <img src={img1} alt="" />
-          <p>JEANS</p>
+          <p>Brigette Longsleeve</p>
           <p>RS. 8000.00</p>
           <Link to="addtocart" className="add-btn">Add to Cart</Link>
         </div>
 
         <div className="card">
           <img src={img2} alt="" />
-          <p>SHIRTS</p>
+          <p>Chill Filo Tank</p>
           <p>RS. 9000.00</p>
           <Link to="addtocart" className="add-btn">Add to Cart</Link>
         </div>
 
         <div className="card">
-          <img src={img6} alt="" />
-          <p>BODYCON</p>
+          <img src={img3} alt="" />
+          <p>Innovate Blazer</p>
           <p>RS. 14000.00</p>
           <Link to="addtocart" className="add-btn">Add to Cart</Link>
         </div>
@@ -41,8 +42,8 @@ let Cards=()=>{
 
       <div className="card-sec2">
         <div className="card">
-          <img src={img3} alt="" />
-          <p>TROUSER</p>
+          <img src={new1 } alt="" />
+          <p>Workwear Dress</p>
           <p>RS. 9500.00</p>
           <Link to="addtocart" className="add-btn">Add to Cart</Link>
         </div>
