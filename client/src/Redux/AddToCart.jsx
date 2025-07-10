@@ -17,7 +17,7 @@ const AddToCart = () => {
    const ans = cartData.map((key)=>{
      return (
        <>
-       
+
         <tr>
           <td>
             <img src={key.defaultImage} width="100px" height="100px" />
@@ -44,7 +44,7 @@ const AddToCart = () => {
 
   return (
     <>
-      <div id="cart-head">
+      <div id="zaid">
         <h1>Our Cart Data</h1>
       </div>
       <Table striped bordered hover>

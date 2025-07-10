@@ -40,6 +40,8 @@ const Home = () => {
     myData.map((e)=>{
       return (
         <>
+
+        <h1>ADMIN CARTS</h1>
           <div className="card-container">
             <Card 
               style={{ width: "18rem", alignItems: "center", display:"flex", flexDirection:"column"}}
@@ -49,8 +51,8 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>{e.name}</Card.Title>
                 <Card.Text>₹{e.price}</Card.Text>
-                <Card.Text>{e.description}</Card.Text>
-                <Card.Text>{e.category}</Card.Text>
+                {/* <Card.Text>{e.description}</Card.Text> */}
+                {/* <Card.Text>{e.category}</Card.Text> */}
 
                 <Button
                   variant="primary"

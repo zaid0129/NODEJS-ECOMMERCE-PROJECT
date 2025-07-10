@@ -5,6 +5,7 @@ import img8 from "../images/img8.jpg"
 import img9 from "../images/img9.jpg"
 import img10 from "../images/img10.jpg"
 import img11 from "../images/img11.jpg"
+import video from "../images/video2.mp4.MP4"
 import "../css/FrontPage.css";
 
 
@@ -12,10 +13,32 @@ const FrontPage2 = () => {
   return (
     <>
 
-{/* SECTION - 3 */}
+{/* SECTION - 3  VIDEO SECTION*/}
+
+ <div className="video-section">
+      <video
+        className="bg-video"
+        src={video}
+        autoPlay
+        muted
+        loop
+        playsInline
+      ></video>
+      <div className="video-overlay">
+        <div className="video-content">
+          <h2 className="video-title">Discover Our New Collection</h2>
+          <p className="video-subtitle">
+            Exclusive drops, fresh fits, and limited releases for every style.
+          </p>
+          {/* <button className="shop-now-btn">Shop Now</button> */}
+        </div>
+      </div>
+    </div>
 
 
-    <div className="section-three">
+{/* --------------------------------------------------------------------------------- */}
+
+    {/* <div className="section-three">
   <div className="section-three-left">
     <img src={img5} alt="Woman in orange dress" />
   </div>
@@ -28,13 +51,13 @@ const FrontPage2 = () => {
       <a href="#" className="text-link">View More</a>
     </div>
   </div>
-</div>
+</div> */}
 
 
 {/* SECTION - 4  */}
 
 <div className="section-four">
-  <p>Follow @DayDream on Instagram</p>
+  <p>Follow @AttireArc on Instagram</p>
   <div className="insta-gallery">
     <img src={img7} alt="insta1" />
     <img src={img8} alt="insta2" />
@@ -55,7 +78,7 @@ const FrontPage2 = () => {
     <label htmlFor="newsletter-email">Email *</label>
     <div className="input-row">
       <input type="email" id="newsletter-email" placeholder=" " required />
-      <button type="submit">Subscribe</button>
+      <button type="submit" className="subs">Subscribe</button>
     </div>
   </form>
 </div>

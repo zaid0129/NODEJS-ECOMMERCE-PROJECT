@@ -4,16 +4,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import BackEndUrl from '../utils/BackEndUrl';
 import { useEffect } from 'react';
+import { FiUser, FiSearch, FiHeart, FiShoppingBag } from "react-icons/fi";
 
 
 
 let Header = ()=>{
 
 
-  // const nav=useNavigate()
-  // function handleUser(){
-  //    nav('/userLogin')
-  // }
+  const nav=useNavigate()
+  function handleUser(){
+     nav('/userLogin')
+  }
 
   const handleCart=()=>{
     nav('addtocart')
@@ -48,7 +49,39 @@ let Header = ()=>{
 
     return(
         <>
- <nav className="navbar">
+
+
+
+ <header className="header">
+      {/* <div className="top-banner">
+        BEST SPECIAL OFFERS! 40% OFF!
+      </div> */}
+      <div className="nav-container">
+        <div className="logo">
+          <Link to="/">ATTIREARC</Link>
+        </div>
+        <nav className="nav">
+          <ul className="nav-links">
+            <li><Link to="/">HOMES</Link></li>
+            <li><Link to="/shop">SHOP</Link></li>
+            <li><Link to="/blog">BLOG</Link></li>
+            <li><Link to="/pages">PAGES</Link></li>
+            <li><Link to="/mega">MEGA</Link></li>
+            <li><Link to="/contacts">CONTACTS</Link></li>
+          </ul>
+        </nav>
+        <div className="icons">
+          <FiUser onClick={handleUser} />
+          <FiSearch />
+          <FiHeart onClick={handleCart} />
+          <FiShoppingBag onClick={handleCart} />
+        </div>
+      </div>
+    </header>
+
+
+        
+ {/* <nav className="navbar">
       <ul className="nav-left">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/shop">Shop</Link></li>
@@ -58,14 +91,14 @@ let Header = ()=>{
       </ul>
 
       <div className="nav-center">
-        <Link to="/" className="logo"><i>Day.</i> DREAM</Link>
+        <Link to="/" className="logo"><i>AttireArc.</i></Link>
       </div>
 
       <ul className="nav-right">
-        <li><Link to="/userLogin">Log In</Link></li>
-        <li><Link to="addtocart" className="cart" >🛒 Cart</Link></li>
+        <li><Link to="/ ">Log In</Link></li>
+        <li><Link to="addtocart" className="cart" > Cart</Link></li>
       </ul>
-    </nav>    
+    </nav>     */}
     
       </>
     )

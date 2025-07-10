@@ -1,18 +1,47 @@
 
 import { Link } from "react-router-dom";
 import "../css/FrontPage.css";
-import img1 from "../images/img1.jpg"
-import img2 from "../images/img2.jpg"
-import img3 from "../images/img3.jpg"
-import img4 from "../images/img4.jpg.avif"
+import Slider1 from "../images/Slider1.jpg"
+import Slider2 from "../images/Slider2.jpg"
+import Slider3 from "../images/Slider3.jpg"
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const FrontPage = () => {
   return (
     <>
+ <Carousel fade>
+      <Carousel.Item>
+      <img src={Slider1} className="slide" alt="" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+         <img src={Slider2} className="slide" alt="" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+         <img src={Slider3} className="slide" alt="" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+
+
+    {/* ---------------------------------------------------------------------- */}
 
     {/* SECTION - 1 */}
-  <div className="frontpage-wrapper">
+   {/* <div className="frontpage-wrapper">
       <div className="left-side">
         <img src={img1} alt="Hammock Girl" />
       </div>
@@ -25,7 +54,7 @@ const FrontPage = () => {
           <a href="" className="shop-link">Shop Collection</a>
         </div>
       </div>
-    </div> 
+    </div>  */}
 
 
 {/* SECTION - 2 */}
